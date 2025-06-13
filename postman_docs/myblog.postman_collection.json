@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "641110a3-d05c-412b-a078-aef29cedda60",
+		"name": "myblog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42841346",
+		"_collection_link": "https://lively-satellite-332779.postman.co/workspace/Football-App~707156a3-bdf0-4dc2-bc6c-0c714cbd2dec/collection/42841346-641110a3-d05c-412b-a078-aef29cedda60?action=share&source=collection_link&creator=42841346"
+	},
+	"item": [
+		{
+			"name": "Blog",
+			"item": [
+				{
+					"name": "CreateBlog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"THIS IS MY 3rd BLOG\",\r\n    \"des\": \"This is my 3rd blog website creation.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/CreateBlog",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CreateBlog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadBlog",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/ReadBlog",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ReadBlog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/DeleteBlog/:blogId",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"DeleteBlog",
+								":blogId"
+							],
+							"variable": [
+								{
+									"key": "blogId",
+									"value": "684bf269d3deaa3d355c496e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Blog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"This was 1st Blog\",\r\n    \"des\": \"This is my first blog website creation.(EDITED)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/EditBlog/:blogId",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"EditBlog",
+								":blogId"
+							],
+							"variable": [
+								{
+									"key": "blogId",
+									"value": "684bc2cbd3995a2f535b0712"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserRegistration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE}}/UserRegistration/:email",
+					"host": [
+						"{{BASE}}"
+					],
+					"path": [
+						"UserRegistration",
+						":email"
+					],
+					"variable": [
+						{
+							"key": "email",
+							"value": "yehik41366@lewou.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{BASE}}/UserLogin/:email/:otp",
+					"host": [
+						"{{BASE}}"
+					],
+					"path": [
+						"UserLogin",
+						":email",
+						":otp"
+					],
+					"variable": [
+						{
+							"key": "email",
+							"value": "yehik41366@lewou.com"
+						},
+						{
+							"key": "otp",
+							"value": "690023"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE",
+			"value": "http://localhost:8080/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InllaGlrNDEzNjZAbGV3b3UuY29tIiwidXNlcl9pZCI6IjY4NGJiNzIwNGI0N2U0NGQyM2RhZjg5ZSIsImlhdCI6MTc0OTc5NDMyOCwiZXhwIjoxNzQ5ODgwNzI4fQ.GbpFYs9CUbENuQrDiGJE69l_a3_lzxlqrQQDoMu6f7o",
+			"type": "string"
+		}
+	]
+}
