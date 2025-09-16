@@ -30,7 +30,6 @@ const limiter = rateLimit({
 
 app.use(limiter);
 app.set("etag", false);
-app.get("/", (req,res) => res.send("Server is running fine..."));
 app.use('/api/v1', router);
 
 export default app;
