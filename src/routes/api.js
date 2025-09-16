@@ -11,7 +11,7 @@ router.get("/UserLogin/:email/:otp", UserLogin);
 
 //CRUD OPERATIOn IN BLOG
 router.post("/CreateBlog", AuthVerification, CreateBlog);
-router.get("/ReadBlog", AuthVerification, ReadBlog);
+router.get("/ReadBlog", ReadBlog);
 router.put("/EditBlog/:blogId", AuthVerification, EditBlog);
 router.delete("/DeleteBlog/:blogId", AuthVerification, DeleteBlog);
 
